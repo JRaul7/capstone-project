@@ -10,7 +10,7 @@ Original file is located at
 import requests
 
 # URL of the Flask server
-url = 'http://127.0.0.1:9696/predict'  # Update the port if needed
+url = 'http://localhost:9696/predict'  # Update the port if needed
 
 # Path to the image file you want to send for prediction
 image_path = './image.png'  # Replace with your image path
