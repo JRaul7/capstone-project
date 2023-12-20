@@ -55,6 +55,8 @@ In conclusion the CNN model has the following configurations
 
 Download the A-Z letter dataset csv file from this link, The compressed file weight is 189Mb and unzipped 683Mb  ([https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format](https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format/download?datasetVersionNumber=5)) 
 
+Change the name of the csv file to **letters_handwritten_data.csv** (important to have this exact name)
+
 Before running the scripts, ensure you have the following dependencies installed:
 
 - Python (version 3.11.6)
@@ -122,7 +124,7 @@ The directories look like this in Linux and macOS:
 - prediction_character_test
 - requirements.txt
 - train.py
-- the unzipped letters_handwritten_data.csv dataset
+- the unzipped and renamed **letters_handwritten_data.csv** dataset
 
 4.  Activate the Virtual Environment:
 
@@ -163,7 +165,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-4. Copy the cnn_model, cnn_model, train.py, predict.py, prediction_character_test.py inside the same directory folder as the virtual environment is created:
+4. Copy the train.py, predict.py, prediction_character_test.py, image.png, letters_handwritten_data.csv inside the same directory folder as the virtual environment is created:
 
 For windows:
 `Script`
@@ -199,6 +201,31 @@ python  prediction_character_test.py
 ```
 
 8. Send a request to the prediction API http://localhost:9696/predict and get the response:
+## Test of the uploaded models
+
+1. Copy the **cnn_model.tflite** inside the same directory folder as the virtual environment is created
+2. For local deployment, start up the Flask server for prediction API:
+```
+python predict.py
+```
+
+Or use a WSGI server, Waitress to run:
+
+`waitress-serve --listen=0.0.0.0:9696 predict:app`
+
+It will run the server on localhost using port 9696.
+
+3. Test the prediction model
+
+- Open a new command Line windows
+ 
+- Activate the virtual environment in this new CLI window
+
+- Execute the prediction_character_test.py file
+```
+python  prediction_character_test.py
+```
+4. Additionaly you can use the provided keras model type cnn_model.h5 to extract the model weights using the save_weights() method and load them in a different model using the load_weights() method. Refer to this [link](https://keras.io/api/models/model_saving_apis/weights_saving_and_loading/)
 
 ## Acknowledgments
 
