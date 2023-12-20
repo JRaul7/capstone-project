@@ -27,6 +27,8 @@ The GitHub repository consists on the following files:
 6) cnn_model.tflite : tensorflow lite mode, used for serving the model using flask or another webservice
 
 7) image.png: image used for testing the cnn model
+
+8) Sample images folder: more images for testing the CNN model
    
 ## Challenges Faced
 The project encountered challenges related to reproducibility due to the phenomenon of gradient explosion during CNN training with the dataset. To address this, the optimizer was tuned to mitigate this issue. For user reference, both a Keras model file (initial_model.h5) and a TensorFlow Lite model are provided in the repository for users to evaluate the model's performance.
