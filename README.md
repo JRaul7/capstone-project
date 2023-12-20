@@ -53,6 +53,8 @@ In conclusion the CNN model has the following configurations
 
 ### Prerequisites
 
+Download the A-Z letter dataset csv file from this link, The compressed file weight is 189Mb and unzipped 683Mb  ([https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format](https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format/download?datasetVersionNumber=5)) 
+
 Before running the scripts, ensure you have the following dependencies installed:
 
 - Python (version 3.11.6)
@@ -120,6 +122,7 @@ The directories look like this in Linux and macOS:
 - prediction_character_test
 - requirements.txt
 - train.py
+- the unzipped letters_handwritten_data.csv dataset
 
 4.  Activate the Virtual Environment:
 
